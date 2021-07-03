@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 const Main = () => {
-  const classes = useStyles( );
+  const classes = useStyles();
 
   const history = useHistory();
 

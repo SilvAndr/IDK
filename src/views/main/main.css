@@ -14,30 +14,27 @@
 
 .grid-container{
     background-color: burlywood;
-
     margin: 10px;
 
     display: grid;
-    grid-template-columns: repeat(2,auto);
-    grid-template-rows: 50px repeat(2,minmax(100px, auto)) 50px;
+    grid-template-columns: 99vw;
+    grid-template-rows: 100px 300px 100px;
     grid-gap: 20px;
     text-align: center;
 
 }
 
-.CaixaHeader{
+.Caixa{
     background-color:deepskyblue;
 }
-.CaixaContent{
-    background-color:deepskyblue;
 
-}
-.CaixaSidebar{
-    background-color:deepskyblue;
+.Meio{
+    background-color: cornflowerblue;
 
-}
-.CaixaEnd{
-    background-color:deepskyblue;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 150px;
+    grid-gap: 20px;
 }
 
 

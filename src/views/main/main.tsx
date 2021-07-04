@@ -42,17 +42,16 @@ const Main = () => {
         </AppBar>
       </div>
 
-      <div className="grid-container">
-        <Grid className="CaixaHeader">Box 1</Grid>
-        <Grid className="CaixaSidebar">Box 2</Grid>
-        <Grid className="CaixaContent">Box 3</Grid>
-        <Grid className="CaixaSidebar">Box 4</Grid>
-        <Grid className="CaixaContent">Box 5</Grid>
-        <Grid className="CaixaEnd">Box 6</Grid>
-      </div>
-
-      <Grid className="Centro">
+      <Grid className="grid-container">
+        <Grid className="Caixa">Box1</Grid>
+        <Grid>
+          <Grid className="Meio">Box2</Grid>
+          <Grid className="Meio">Box3</Grid>
+        </Grid>
+        <Grid className="Caixa">Box4</Grid>  
       </Grid>
+
+      <Grid className="Centro"></Grid>
       <Grid
         container
 

@@ -7,14 +7,42 @@
 .botoesfundo
 {
     position: fixed;
-    background-color: rgb(52, 125, 235) !important;
+    background-color:deepskyblue !important;
     border-radius: 50px !important;
 
 }
 
+.grid-container{
+    background-color: burlywood;
+
+    margin: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: 50px repeat(2,minmax(100px, auto)) 50px;
+    grid-gap: 20px;
+    text-align: center;
+
+}
+
+.CaixaHeader{
+    background-color:deepskyblue;
+}
+.CaixaContent{
+    background-color:deepskyblue;
+
+}
+.CaixaSidebar{
+    background-color:deepskyblue;
+
+}
+.CaixaEnd{
+    background-color:deepskyblue;
+}
+
 
 .rodape{
-    background-color:rgb(164, 213, 230);
+    background-color:#3f51b5;
 }
 
 .Cabecalho{
@@ -24,6 +52,6 @@
 }
 
 .Centro{
-    height: 90vh;
+    height: 00vh;
     width:100vh
 }

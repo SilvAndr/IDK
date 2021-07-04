@@ -1,8 +1,9 @@
 import "./main.css"
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Grid, Button, AppBar,Typography, IconButton, Toolbar } from '@material-ui/core';
+import { Grid, Button, AppBar, Typography, IconButton, Toolbar, Box } from '@material-ui/core';
 import { useHistory } from "react-router";
-import MenuIcon from '@material-ui/icons/Menu';
+import { Menu } from '@material-ui/icons';
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,24 +28,31 @@ const Main = () => {
   return (
 
     <div>
-      <Grid className="Cabecalho">
-        Ola, bem vindo ao meu 1º Site
-      </Grid>
-
       <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <Menu />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Menu
+            </Typography>
+            <Button color="inherit">Silva</Button>
+          </Toolbar>
+        </AppBar>
+      </div>
 
+      <div className="grid-container">
+        <Grid className="CaixaHeader">Box 1</Grid>
+        <Grid className="CaixaSidebar">Box 2</Grid>
+        <Grid className="CaixaContent">Box 3</Grid>
+        <Grid className="CaixaSidebar">Box 4</Grid>
+        <Grid className="CaixaContent">Box 5</Grid>
+        <Grid className="CaixaEnd">Box 6</Grid>
+      </div>
+
+      <Grid className="Centro">
+      </Grid>
       <Grid
         container
 
@@ -63,7 +71,7 @@ const Main = () => {
         >
           Creditos
         </Button>
-        
+
       </Grid>
       <Grid>
 

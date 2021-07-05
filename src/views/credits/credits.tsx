@@ -18,6 +18,7 @@ const string = history.location.state as String;
 
 
             </Grid>
+            
             <Grid 
             
             container

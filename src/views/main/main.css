@@ -4,37 +4,29 @@
     width: 100vw;
 }
 
-.botoesfundo
-{
+.botoesfundo{
     position: fixed;
     background-color:deepskyblue !important;
     border-radius: 50px !important;
 
 }
 
-.grid-container{
-    background-color: burlywood;
-    margin: 10px;
-
-    display: grid;
-    grid-template-columns: 99vw;
-    grid-template-rows: 100px 300px 100px;
-    grid-gap: 20px;
-    text-align: center;
-
+.Topo{
+    background-color:deepskyblue;
+    height:20vh;
+    width: 100vw;
 }
 
-.Caixa{
-    background-color:deepskyblue;
+.Fundo{
+    background-color:cadetblue;
+    height:10vh;
+    width:100vw;
 }
 
 .Meio{
     background-color: cornflowerblue;
-
-    display: grid;
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 150px;
-    grid-gap: 20px;
+    width: 100vw;
+    height:30vh;
 }
 
 

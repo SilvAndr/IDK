@@ -28,21 +28,39 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+const LeDaCaixa = () => {
+  
+}
+
 const Main = () => {
   const classes = useStyles();
-  const [age, setAge] = React.useState<string | number>('');
-  const [open, setOpen] = React.useState(false);
+  const [coinBase, setCoinBase] = React.useState<string | number>('');
+  const [openBase, setOpenBase] = React.useState(false);
   
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setAge(event.target.value as number);
+  const handleChangeBase = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setCoinBase(event.target.value as number);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseBase = () => {
+    setOpenBase(false);
   };
 
-  const handleOpen = () => {
-    setOpen(true);
+  const handleOpenBase = () => {
+    setOpenBase(true);
+  };
+
+  const [coinConv, setCoinConv] = React.useState<string | number>('');
+  const [openConv, setOpenConv] = React.useState(false);
+  const handleChangeConv = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setCoinConv(event.target.value as number);
+  };
+
+  const handleCloseConv = () => {
+    setOpenConv(false);
+  };
+
+  const handleOpenConv = () => {
+    setOpenConv(true);
   };
 
   const history = useHistory();
@@ -71,7 +89,14 @@ const Main = () => {
         justify="center"
         alignItems="center"
       >
-        <Grid className="Topo">Box1</Grid>
+        <Grid 
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        className="Topo">
+          BOX 1
+        </Grid>
         <Grid
           container
           direction="row"
@@ -79,21 +104,24 @@ const Main = () => {
           alignItems="center"
           className="Meio"
         >
-          <Grid item xs={6}>
-            Box3
-
+          <Grid 
+          item xs={6}
+          container
+          justify="center"
+          direction="column"
+          alignItems="center">
             <Grid>
               <TextField id="outlined-basic" label="Valor a converter" variant="outlined"></TextField>
               <FormControl className={classes.formControl}>
-                <InputLabel id="demo-controlled-open-select-label">Moeda</InputLabel>
+                <InputLabel id="demo-controlled-open-select-label">Moeda Base</InputLabel>
                 <Select
                   labelId="demo-controlled-open-select-label"
                   id="demo-controlled-open-select"
-                  open={open}
-                  onClose={handleClose}
-                  onOpen={handleOpen}
-                  value={age}
-                  onChange={handleChange}
+                  open={openBase}
+                  onClose={handleCloseBase}
+                  onOpen={handleOpenBase}
+                  value={coinBase}
+                  onChange={handleChangeBase}
                 >
                   <MenuItem value="">
                     <em>Nada</em>
@@ -103,9 +131,36 @@ const Main = () => {
                   <MenuItem value={30}>GBP</MenuItem>
                 </Select>
               </FormControl>
+              
+              <FormControl className={classes.formControl}>
+                <InputLabel id="demo-controlled-open-select-label">Converter para</InputLabel>
+                <Select
+                  labelId="demo-controlled-open-select-label"
+                  id="demo-controlled-open-select"
+                  open={openConv}
+                  onClose={handleCloseConv}
+                  onOpen={handleOpenConv}
+                  value={coinConv}
+                  onChange={handleChangeConv}
+                  >
+                    <MenuItem value="">
+                      <em>Nada</em>
+                    </MenuItem>
+                    <MenuItem value={10}>EUR</MenuItem>
+                    <MenuItem value={20}>USD</MenuItem>
+                    <MenuItem value={30}>GBP</MenuItem>
+                  </Select>
+              </FormControl>
 
             </Grid>
-            
+            <TextField
+              id="standard-read-only-input"
+              label="Valor Convertido"
+              defaultValue="Valor Convertido"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
           </Grid>
           <Grid item xs={6}>
             Box4

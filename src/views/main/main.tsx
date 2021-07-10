@@ -28,12 +28,17 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const LeDaCaixa = () => {
-  
-}
-
 const Main = () => {
+
   const classes = useStyles();
+
+  const [value, setValue] = React.useState('');
+
+  const handleChangeText = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target.value));
+  };
+
+
   const [coinBase, setCoinBase] = React.useState<string | number>('');
   const [openBase, setOpenBase] = React.useState(false);
   
@@ -111,7 +116,7 @@ const Main = () => {
           direction="column"
           alignItems="center">
             <Grid>
-              <TextField id="outlined-basic" label="Valor a converter" variant="outlined"></TextField>
+
               <FormControl className={classes.formControl}>
                 <InputLabel id="demo-controlled-open-select-label">Moeda Base</InputLabel>
                 <Select
@@ -131,6 +136,11 @@ const Main = () => {
                   <MenuItem value={30}>GBP</MenuItem>
                 </Select>
               </FormControl>
+
+              <TextField 
+              onChange={handleChangeText}
+              label="Valor a converter" 
+              variant="outlined"></TextField>
               
               <FormControl className={classes.formControl}>
                 <InputLabel id="demo-controlled-open-select-label">Converter para</InputLabel>
@@ -160,6 +170,7 @@ const Main = () => {
               InputProps={{
                 readOnly: true,
               }}
+              value={value}
             />
           </Grid>
           <Grid item xs={6}>
